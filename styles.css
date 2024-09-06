@@ -1,0 +1,234 @@
+/**
+ * @file styles.css
+ * @description Dit stylesheet bevat de stijlen voor de visitekaartje, inclusief de basisinstellingen, profielfoto, kaartopmaak, en animaties. Het zorgt ervoor dat de elementen op de pagina op een aantrekkelijke en gestructureerde manier worden weergegeven.
+ * @bronnen School opdracht
+ * @author Fatima el Hilali
+ */
+
+/* Basisinstellingen voor de body */
+body {
+  /* Flexbox om de inhoud in het midden van het scherm te centreren */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Zorgt ervoor dat de body de volledige hoogte van het scherm gebruikt */
+  height: 100vh;
+  /* Achtergrondkleur van de body */
+  background-color: #f4f4f4;
+  /* Verwijdert standaardmarges */
+  margin: 0;
+  /* Lettertype voor de hele pagina */
+  font-family: Arial, sans-serif;
+}
+
+/* Stijlen voor de profielfoto */
+.profile-photo {
+  /* Breedte en hoogte van de profielfoto */
+  width: 100px;
+  height: 110px;
+  /* Maakt de foto rond */
+  border-radius: 50%;
+  /* Zorgt ervoor dat de afbeelding goed wordt weergegeven */
+  object-fit: cover;
+  /* Border rond de afbeelding */
+  border: 5px solid;
+  /* Kleur van de border */
+  border-color: #0d7c66;
+  /* Animatie voor de borderkleur */
+  animation: backgroundAnimation 10s infinite;
+}
+
+/* Animatie voor de borderkleur van de profielfoto */
+@keyframes backgroundAnimation {
+  0%,
+  100% {
+    border-color: #41b3a2;
+  } /* Start- en eindkleur */
+  25% {
+    border-color: #0f5248;
+  } /* Kleur op 25% van de animatie */
+  50% {
+    border-color: #bde8ca;
+  } /* Kleur op 50% van de animatie */
+  75% {
+    border-color: #89a39f;
+  } /* Kleur op 75% van de animatie */
+}
+
+/* Hoofdsectie van het visitekaartje */
+.business-card {
+  /* Achtergrondkleur met een verloop */
+  background: linear-gradient(#0d7c66, #41b3a2, #bde8ca, #d7c3f1);
+  /* Breedte van het visitekaartje */
+  width: 480px;
+  /* Achtergrondkleur van de kaart */
+  background-color: #ffffff;
+  /* Schaduw rond het visitekaartje */
+  box-shadow: 0 4px 8px #ce51511a;
+  /* Hoeken van het visitekaartje afgerond */
+  border-radius: 16px;
+  /* Tekst gecentreerd */
+  text-align: center;
+  /* Relatieve positie voor absolute positioning van pseudo-elementen */
+  position: relative;
+  /* Verbergen van overflow */
+  overflow: hidden;
+  /* Automatische marges voor centreren op de pagina */
+  margin: auto;
+}
+
+/* Stijlen voor de titel op de visitekaartje */
+.business-card h1 {
+  /* Grootte van de titeltekst */
+  font-size: 24px;
+  /* Kleur van de titeltekst */
+  color: #0f5248;
+  /* Marges rond de titeltekst */
+  margin: 5px 0;
+  /* Lettertype voor de titel */
+  font-family: myFont;
+  /* Extra marge aan de onderkant van de titel */
+  margin-bottom: 10px;
+}
+
+/* Stijlen voor de Font Awesome sterren */
+.fa-regular {
+  /* Kleur van de sterren */
+  color: #0f5248;
+  /* Ruimte rechts van de sterren */
+  margin-right: 5px;
+}
+
+/* Stijlen voor de vaardigheidssectie */
+.skill p {
+  /* Verwijdert marges rondom de tekst */
+  margin: 0;
+  /* Kleur van de tekst */
+  color: #0f5248;
+  /* Flexbox om de tekst te centreren */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Padding rondom de tekst */
+  padding: 5px 0;
+  /* Grootte van de tekst */
+  font-size: 10px;
+  /* Lettertype voor de tekst */
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Definieert een eigen lettertype */
+@font-face {
+  font-family: myFont;
+  src: url(Peristiwa.otf);
+}
+
+/* Stijlen voor de tekst in de avatar-sectie */
+.avatar-card p {
+  /* Verwijdert marges rondom de tekst */
+  margin: 0;
+  /* Grootte van de tekst */
+  font-size: 7px;
+  /* Kleur van de tekst */
+  color: #1b403a;
+}
+
+/* Stijlen voor de padding van de kaartinhoud */
+.card-padding {
+  /* Padding rondom de inhoud */
+  padding: 20px;
+  /* Flexbox om items te centreren */
+  display: flex;
+  align-items: center;
+  /* Ruimte boven de padding */
+  margin-top: 10px;
+  /* Ruimte tussen de items */
+  justify-content: space-between;
+}
+
+/* Stijlen voor de voettekst van het visitekaartje */
+.footer-card {
+  /* Padding rondom de voettekst */
+  padding: 8px;
+  /* Achtergrondkleur van de voettekst */
+  background-color: #89a39f;
+  /* Flexbox om de items te verdelen */
+  display: flex;
+  justify-content: space-evenly;
+  /* Kleur van de tekst in de voettekst */
+  color: #1b403a;
+  /* Grootte van de tekst */
+  font-size: 10px;
+}
+
+/* Pseudo-element voor een extra achtergrondvorm in de kaart */
+.business-card::before {
+  /* Leeg inhoudselement voor de achtergrondvorm */
+  content: "";
+  /* Absolute positionering voor het element */
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  /* Grootte van de achtergrondvorm */
+  width: 200px;
+  height: 200px;
+  /* Achtergrondkleur van de achtergrondvorm */
+  background-color: #c65bcf;
+  /* Maakt de achtergrondvorm rond */
+  border-radius: 50%;
+  /* Transparantie van de achtergrondvorm */
+  opacity: 0.2;
+}
+
+/* Stijlen voor de quote-sectie */
+.quote-card {
+  /* Ruimte boven de quote */
+  margin-top: -30px;
+  /* Grootte van de quote-tekst */
+  font-size: 14px;
+  /* Stijl van de quote-tekst */
+  font-style: italic;
+  /* Padding rondom de quote */
+  padding: 10px;
+  /* Hoeken van de quote afgerond */
+  border-radius: 8px;
+  /* Lettertype voor de quote-tekst */
+  font-family: "Georgia", serif;
+  /* De heartbeat animatie */
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* Definieer de heartbeat animatie */
+@keyframes heartbeat {
+  0% {
+    /* Begin van de animatie (0% van de tijd) */
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Vergroot de tekst met 10% */
+  }
+  100% {
+    transform: scale(
+      1
+    ); /* De grootteverhouding keert terug naar de originele waarde */
+  }
+}
+
+/* Kleur van de tekst in de quote-sectie */
+.quote-card p {
+  color: #0f5248;
+}
+
+/* Stijlen voor de bezoekenteller */
+.visit-counter {
+  /* Ruimte boven de teller */
+  margin-top: -1px;
+  /* Ruimte links van de teller */
+  margin-left: 150px;
+  /* Kleur van de tekst in de teller */
+  color: #43645f;
+  /* Lettertype voor de teller */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* Grootte van de tekst in de teller */
+  font-size: 10px;
+}
