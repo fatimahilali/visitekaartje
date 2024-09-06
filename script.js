@@ -10,6 +10,7 @@ let visitCount = localStorage.getItem("page_view");
 
 // Controleer of er al een aantal bezoeken is opgeslagen
 if (visitCount) {
+  console.log(visitCount)
   // Als er al een aantal bezoeken is, zet dit om in een getal en verhoog het met 1
   visitCount = Number(visitCount) + 1;
   // Sla het nieuwe aantal bezoeken op in de opslag van de browser
